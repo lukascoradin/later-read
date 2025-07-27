@@ -10,10 +10,10 @@
 <% end %>
 
 <% if params[:q].present? %>
-  <% if @search_results && @search_results['articles'].present? %>
+  <% if @search_results.present? %>
     <h2 class="text-2xl font-semibold mb-4 mt-4 p-2"><%= t("articles.index.title_search", query: params[:q]) %></h2>
     <ul class="space-y-4">
-      <% @search_results['articles'].each do |article| %>
+      <% @search_results.each do |article| %>
         <li class="p-4 bg-white rounded-lg shadow hover:bg-gray-50">
           <h3 class="text-lg font-medium text-gray-900">
             <%= article['title'] %>
@@ -29,10 +29,10 @@
     </ul>
   <% end %>
 <% else %>
-  <% if @headlines && @headlines['articles'].present? %>
+  <% if @headlines.present? %>
     <h1 class="text-3xl font-bold mb-6 mt-6 p-2"><%= t("articles.index.title_headline") %></h1>
     <ul class="space-y-4">
-      <% @headlines['articles'].each do |article| %>
+      <% @headlines.each do |article| %>
         <li class="p-4 bg-white rounded-lg shadow hover:bg-gray-50">
           <h3 class="text-lg font-medium text-gray-900">
             <%= article['title'] %>
@@ -48,3 +48,6 @@
     </ul>
   <% end %>
 <% end %>
+<div class="flex gap-4 justify-center flex-row mt-4 mb-4">
+  <%= pagy_nav(@pagy).html_safe %>
+</div>
