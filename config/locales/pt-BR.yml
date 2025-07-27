@@ -1,0 +1,8 @@
+pt-BR:
+  articles:
+    index:
+      button_search: Pesquisar
+      button_link: Ver artigo
+      placeholder: Pesquise por artigos
+      title_search: Resultados para "%{query}"
+      title_headline: Top headlines

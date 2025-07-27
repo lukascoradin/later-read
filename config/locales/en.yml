@@ -29,3 +29,11 @@
 
 en:
   hello: "Hello world"
+  articles:
+    index:
+      button_search: Search
+      button_link: See article
+      placeholder: Search for articles
+      title_search: Results for "%{query}"
+      title_headline: Top headlines
+

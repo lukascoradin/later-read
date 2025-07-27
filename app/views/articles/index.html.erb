@@ -1,4 +1,50 @@
-<div>
-  <h1 class="font-bold text-4xl">Articles#index</h1>
-  <p>Find me in app/views/articles/index.html.erb</p>
-</div>
+
+
+<%= form_with url: articles_path, method: :get, local: true, class: "max-w-xl mt-6" do |form| %>
+    <div class="flex flex-row items-center gap-4 p-2">
+    <%= form.text_field :q, value: params[:q], class: "flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: t("articles.index.placeholder") %>
+    <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+       <p><%= t("articles.index.button_search") %></p>
+    </button>
+  </div>
+<% end %>
+
+<% if params[:q].present? %>
+  <% if @search_results && @search_results['articles'].present? %>
+    <h2 class="text-2xl font-semibold mb-4 mt-4 p-2"><%= t("articles.index.title_search", query: params[:q]) %></h2>
+    <ul class="space-y-4">
+      <% @search_results['articles'].each do |article| %>
+        <li class="p-4 bg-white rounded-lg shadow hover:bg-gray-50">
+          <h3 class="text-lg font-medium text-gray-900">
+            <%= article['title'] %>
+          </h3>
+          <p class="text-sm text-gray-500 mt-2 mb-2">
+            <%= article['source']['name'] %> - <%= article['publishedAt'].to_date.strftime('%d/%m/%Y') %>
+          </p>
+          <a href="<%= article['url'] %>" target="_blank" class="text-sm text-white px-3 py-1 rounded-md bg-gray-500 hover:bg-gray-600">
+            <%= t("articles.index.button_link") %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <% if @headlines && @headlines['articles'].present? %>
+    <h1 class="text-3xl font-bold mb-6 mt-6 p-2"><%= t("articles.index.title_headline") %></h1>
+    <ul class="space-y-4">
+      <% @headlines['articles'].each do |article| %>
+        <li class="p-4 bg-white rounded-lg shadow hover:bg-gray-50">
+          <h3 class="text-lg font-medium text-gray-900">
+            <%= article['title'] %>
+          </h3>
+          <p class="text-sm text-gray-500 mt-2 mb-2">
+            <%= article['source']['name'] %> - <%= article['publishedAt'].to_date.strftime('%d/%m/%Y') %>
+          </p>
+          <a href="<%= article['url'] %>" target="_blank" class="text-sm text-white px-3 py-1 rounded-md bg-gray-500 hover:bg-gray-600">
+            <%= t("articles.index.button_link") %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
