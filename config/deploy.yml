@@ -35,10 +35,15 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true
+
+    NEWS_API_HOST: https://newsapi.org/v2
+    NEWS_API_KEY: fc993c335f5749a698a7700a00600812
+
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
