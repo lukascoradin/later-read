@@ -2,13 +2,13 @@ require "httparty"
 
 class NewsApi
   include HTTParty
-  base_uri ENV.fetch("NEWS_API_HOST")
+  base_uri ENV["NEWS_API_KEY"]
 
   def self.top_headlines(country: "us", category: nil)
     options = {
       query: {
         country: country,
-        apiKey: ENV.fetch("NEWS_API_KEY")
+        apiKey: ENV["NEWS_API_KEY"]
       }
     }
     options[:query][:category] = category if category
@@ -21,7 +21,7 @@ class NewsApi
       query: {
         q: query,
         sortBy: sort_by,
-        apiKey: ENV.fetch("NEWS_API_KEY")
+        apiKey: ENV["NEWS_API_KEY"]
       }
     }
     options[:query][:from] = from if from
