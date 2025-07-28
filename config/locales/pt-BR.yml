@@ -3,6 +3,89 @@ pt-BR:
     index:
       button_search: Pesquisar
       button_link: Ver artigo
+      button_save: Salvar artigo
       placeholder: Pesquise por artigos
       title_search: Resultados para "%{query}"
       title_headline: Top headlines
+  devise:
+    confirmations:
+      confirmed: A sua conta foi confirmada com sucesso.
+      send_instructions: Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.
+      send_paranoid_instructions: Se o seu email existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos.
+    errors:
+      messages:
+        already_confirmed: já foi confirmado, por favor, tente fazer login
+        confirmation_period_expired: precisa ser confirmado dentro de %{period}, por favor, solicite um novo
+        expired: expirou, por favor, solicite um novo
+        not_found: não encontrado
+        not_locked: não foi bloqueado
+        not_saved:
+          one: "1 erro impediu que este %{resource} fosse salvo:"
+          other: "%{count} erros impediram que este %{resource} fosse salvo:"
+    failure:
+      already_authenticated: Você já está autenticado.
+      inactive: A sua conta ainda não foi ativada.
+      invalid: "%{authentication_keys} ou senha inválidos."
+      last_attempt: Você tem mais uma única tentativa antes de sua conta ser bloqueada.
+      locked: A sua conta está bloqueada.
+      not_found_in_database: "%{authentication_keys} ou senha inválidos."
+      timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
+      unauthenticated: Para continuar, faça login ou registre-se.
+      unconfirmed: Antes de continuar, confirme a sua conta.
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de confirmação"
+      reset_password_instructions:
+        subject: "Instruções para redefinir a senha"
+      unlock_instructions:
+        subject: "Instruções para desbloquear"
+      email_changed:
+        subject: "Email alterado"
+      password_change:
+        subject: "Password alterado"
+    omniauth_callbacks:
+      failure: "Não foi possível autenticar você a partir de %{kind} devido a \"%{reason}\"."
+      success: "Autenticação bem-sucedida da conta %{kind}."
+    passwords:
+      no_token: "Você não pode acessar esta página sem ter recebido um e-mail para redefinir a senha. Se você recebeu um e-mail para redefinir a senha, certifique-se de ter usado o URL completo fornecido."
+      send_instructions: "Você receberá um e-mail com instruções sobre como redefinir sua senha em alguns minutos."
+      send_paranoid_instructions: "Se o seu endereço de e-mail estiver em nosso banco de dados, você receberá um link para recuperar sua senha em seu endereço de e-mail em alguns minutos."
+      updated: "Sua senha foi alterada com sucesso. Agora você está conectado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
+      signed_up: Bem vindo! Você realizou seu registro com sucesso.
+      signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
+      signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
+      signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada para o seu email. Por favor, acesse o link para ativar sua conta.
+      update_needs_confirmation: Sua conta foi atualizada com sucesso, mas nós precisamos verificar o novo endereço de email. Por favor, verifique seu email e clique no link de confirmação para finalizar confirmando o seu novo email.
+      updated: A sua conta foi atualizada com sucesso.
+      updated_but_not_signed_in: Sua conta foi atualizada com sucesso, uma vez que sua senha foi alterada será necessário realizar o login novamente.
+      edit:
+        are_you_sure: Você tem certeza?
+        cancel_my_account: Cancelar minha conta
+        currently_waiting_confirmation_for_email: "No momento esperando por: %{email}"
+        leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
+        title: Editar %{resource}
+        unhappy: Não está contente?
+        update: Atualizar
+        we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+    sessions:
+      already_signed_out: Logout já efetuado.
+      signed_in: Login efetuado com sucesso.
+      signed_out: Logout efetuado com sucesso.
+      new:
+        title: Read Later App
+        login: Login
+    unlocks:
+      send_instructions: Dentro de minutos, você receberá um email com instruções de desbloqueio da sua conta.
+      send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um email com instruções para desbloquear ela.
+      unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.
+  navegation:
+    articles: Artigos
+    logout: Deslogar
+    my_articles: Artigos salvos
+  saved_articles:
+    index:
+      title: Meus artigos salvos
+      button_delete: Remover

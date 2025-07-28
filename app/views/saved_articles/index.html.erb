@@ -1,0 +1,16 @@
+<h1 class="text-3xl font-bold mb-6 mt-6 p-2"><%= t("saved_articles.index.title") %></h1>
+
+<ul class="space-y-2">
+  <% @saved_articles.each do |article| %>
+    <li class="p-4 bg-white rounded-lg shadow hover:bg-gray-50">
+      <h3 class="text-lg font-medium text-gray-900">
+        <%= article['title'] %>
+      </h3>
+      <div class="flex gap-2">
+        <a href="<%= article['url'] %>" target="_blank" class="text-sm text-white px-3 py-1 rounded-md bg-gray-500 hover:bg-gray-600">
+          <%= t("articles.index.button_link") %>
+        </a>
+        <%= button_to t("saved_articles.index.button_delete"), saved_article_path(article), method: :delete, class: "text-sm text-white px-3 py-1 rounded-md bg-red-400 hover:bg-red-500" %>
+      </div>
+    </li>
+  <% end %>
