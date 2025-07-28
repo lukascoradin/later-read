@@ -2,7 +2,7 @@ require "httparty"
 
 class NewsApi
   include HTTParty
-  base_uri ENV["NEWS_API_KEY"]
+  base_uri ENV["NEWS_API_HOST"]
 
   def self.top_headlines(country: "us", category: nil)
     options = {
