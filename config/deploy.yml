@@ -7,7 +7,7 @@ image: lukascoradin/read_later
 # Deploy to these servers.
 servers:
   web:
-    - 37.27.14.104
+    - 37.27.242.112
   # job:
   #   hosts:
   #     - 192.168.0.1
