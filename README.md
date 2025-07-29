@@ -82,6 +82,14 @@ http://localhost:3000
 
 ---
 
+## 🌎 Acesso ao projeto em produção
+
+Você pode acessar o app através do site abaixo:
+
+[link_app](http://37.27.242.112/)
+
+---
+
 ## 📦 Tecnologias Utilizadas
 
 * **Ruby on Rails 8**
@@ -91,6 +99,7 @@ http://localhost:3000
 * **NewsAPI** (integração com API externa)
 * **SQLite3** (banco de dados local)
 * **i18n** (internacionalização)
+* **Hetzner** (servidor)
 
 ---
 
