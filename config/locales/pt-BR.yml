@@ -1,4 +1,9 @@
 pt-BR:
+  activerecord:
+    errors:
+      messages:
+        confirmation: não estão iguais
+        too_short: muito curto(a)
   articles:
     index:
       button_search: Pesquisar

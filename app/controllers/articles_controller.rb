@@ -2,12 +2,14 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pagy, @headlines = pagy_array(NewsApi.top_headlines(country: "us")["articles"], page: params[:page], limit: params[:limit])
-
     if params[:q].present?
-      @pagy, @search_results = pagy_array(NewsApi.everything(query: params[:q])["articles"], page: params[:page], limit: params[:limit])
+      articles = NewsApi.everything(query: params[:q])["articles"] || []
+      @pagy, @articles = pagy_array(articles, items: 10, page: params[:page])
+      @headlines = []
     else
-      @search_results = nil
+      headlines = NewsApi.top_headlines(country: "us")["articles"] || []
+      @pagy, @headlines = pagy_array(headlines, items: 10, page: params[:page])
+      @articles = []
     end
   end
 end

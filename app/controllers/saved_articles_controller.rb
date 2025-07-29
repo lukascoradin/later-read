@@ -11,7 +11,7 @@ class SavedArticlesController < ApplicationController
     if @saved_article.save
       redirect_to root_path, notice: "Artigo salvo!"
     else
-      redirect_to root_path, alert: "Não foi possível salvar."
+      redirect_to root_path, alert: "Não foi possível salvar, pois esse artigo já foi salvo anteriormente."
     end
   end
 

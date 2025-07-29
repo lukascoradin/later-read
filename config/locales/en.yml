@@ -1,4 +1,9 @@
 en:
+  activerecord:
+    errors:
+      messages:
+        confirmation: need to be confirmed
+        too_short: too short
   articles:
     index:
       button_search: Search
