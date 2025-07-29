@@ -12,13 +12,13 @@ O **Read Later** foi desenvolvido com o objetivo de proporcionar uma experiênci
 
 ## 🧹 Funcionalidades
 
-✅ Cadastro e autenticação de usuários (Devise)
-✅ Integração com a NewsAPI para exibição de notícias
-✅ Possibilidade de salvar artigos para leitura posterior
-✅ Listagem dos artigos salvos por cada usuário
-✅ Layout responsivo com Tailwind CSS
-✅ Paginação com Pagy
-✅ Internacionalização com suporte a português (`pt-BR`)
+- Cadastro e autenticação de usuários (Devise)
+- Integração com a NewsAPI para exibição de notícias
+- Possibilidade de salvar artigos para leitura posterior
+- Listagem dos artigos salvos por cada usuário
+- Layout responsivo com Tailwind CSS
+- Paginação com Pagy
+- Internacionalização com suporte a português (`pt-BR`)
 
 ---
 
