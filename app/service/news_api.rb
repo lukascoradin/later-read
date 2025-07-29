@@ -21,7 +21,6 @@ class NewsApi
       query: {
         q: query,
         sortBy: sort_by,
-        pageSize: 100,
         apiKey: ENV["NEWS_API_KEY"]
       }
     }
