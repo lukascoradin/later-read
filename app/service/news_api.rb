@@ -1,32 +1,28 @@
 require "httparty"
 
 class NewsApi
-  include HTTParty
-  base_uri ENV["NEWS_API_HOST"]
+  URI = ENV["NEWS_API_HOST"]
 
-  def self.top_headlines(country: "us", category: nil)
-    options = {
-      query: {
-        country: country,
-        apiKey: ENV["NEWS_API_KEY"]
-      }
+  def self.top_headlines(country: "us")
+    data   = {
+      country: country,
+      apiKey: ENV["NEWS_API_KEY"]
     }
-    options[:query][:category] = category if category
 
-    get("/top-headlines", options)
+    request = HTTParty.get("#{URI}/top-headlines", query: data)
+    response = JSON.parse(request.body)["articles"]
   end
 
-  def self.everything(query:, from: nil, to: nil, sort_by: "publishedAt")
-    options = {
-      query: {
+  def self.everything(query:, sort_by: "publishedAt")
+    data = {
+        query: {
         q: query,
         sortBy: sort_by,
         apiKey: ENV["NEWS_API_KEY"]
       }
     }
-    options[:query][:from] = from if from
-    options[:query][:to] = to if to
 
-    get("/everything", options)
+    request = HTTParty.get("#{URI}/everything", data)
+    response = JSON.parse(request.body)["articles"]
   end
 end
